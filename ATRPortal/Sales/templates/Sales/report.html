@@ -1,0 +1,350 @@
+{% extends 'Sales/base.html' %}
+
+{% block content %}
+<div class="card border-dark mb-4">
+  <div class="card-body mb-4">
+<center><div class="container border border-secondary" style="background-color: lightgrey">
+<h1>MY REPORT</h1>
+</div></center>
+      </br>
+<form class="row g-3" method="POST" action="{% url 'report' %}">
+    {% csrf_token %}
+  <div class="col-3">
+    <input type="text" class="form-control" id="Start Date" placeholder="Job Number">
+  </div>
+  <div class="col-auto" style=" padding-right: 160px">
+      <button type="submit" class="btn btn-outline-primary">Submit</button>
+  </div>
+  <div class="col-auto" style="background-color: lightgrey; padding-right: 35px">
+    <strong><label class="col-auto col-form-label" style="padding-right: 10px">Click For  </label></strong>
+    <button type="submit" class="btn btn-secondary">Summary</button>
+  </div>
+  <a class="col-auto" style="background-color: lightgrey; padding-right: 35px" href= "{% url 'venue_csv' %}">
+    <button type="submit" class="btn btn-secondary" onclick=" window.open('venue_csv','_blank')">Save to CSV</button>
+  </a>
+  <div class="col-auto" style="background-color: lightgrey; padding-right: 35px" href= "{% url 'venue_pdf' %}">
+    <button type="submit" class="btn btn-secondary" onclick=" window.open('venue_pdf','_blank')">Save to PDF</button>
+  </div>
+  <div class="col-auto" style="background-color: lightgrey">
+    <button type="submit" class="btn btn-secondary">Downlod Certificate</button>
+  </div>
+</form>
+</div></center>
+</div>
+
+
+</br></br>
+<div class="card border-dark mb-4" xmlns="http://www.w3.org/1999/html">
+  <div class="card-body mb-4">
+<center><div class="container border border-secondary" style="background-color: lightgrey">
+<h1>CLIENT PROFILE</h1>
+</div></center>
+</br>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Company Name:</H5>
+</div>
+    <div class="col-4" style="background-color: #F0F0F5">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px ">Address:</H5>
+    </div>
+        <div class="col-4">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Reference PO:</H5>
+    </div>
+    <div class="col-4" style="background-color: #F0F0F5">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Job Number:</H5>
+    </div>
+    <div class="col-4">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Received:</H5>
+    </div>
+    <div class="col-4" style="background-color: #F0F0F5">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Net Weight:</H5>
+    </div>
+    <div class="col-4">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+<div class="row g-3">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Net Quantity:</H5>
+    </div>
+    <div class="col-4" style="background-color: #F0F0F5">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+</div>
+  </div>
+
+
+</br>
+<div class="card border-dark mb-4" xmlns="http://www.w3.org/1999/html">
+  <div class="card-body mb-4">
+<center><div class="container border border-secondary" style="background-color: lightgrey">
+<h1>FINANCIAL SUMMARY</h1>
+</div></center>
+</br>
+<div class="row g-3">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+    <H5 style="margin-top: 5px"><strong>Charges</strong></H5>
+</div>
+<div class="col-2 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px"><strong>Quantity</strong></H5>
+    </div>
+<div class="col-2 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px"><strong>Weight</strong></H5>
+    </div>
+<div class="col-2 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px"><strong>Rate</strong></H5>
+    </div>
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px"><strong>Total</strong></H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-top: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Return Value</H5>
+</div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-3" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-top: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Total Cost</H5>
+</div>
+<div class="col-2">
+<H5>#</H5>
+    </div>
+<div class="col-2">
+<H5>#</H5>
+    </div>
+<div class="col-2">
+<H5>#</H5>
+    </div>
+<div class="col-3">
+<H5>#</H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-top: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px"><strong>Total Balance</strong></H5>
+</div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-3" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+</div>
+  </div>
+</div>
+
+</br></br>
+<div class="card border-dark mb-4" xmlns="http://www.w3.org/1999/html">
+  <div class="card-body mb-4">
+<center><div class="container border border-secondary" style="background-color: lightgrey">
+<h1>FINANCIAL DETAIL</h1>
+</div></center>
+</br>
+<div class="row g-3">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+    <H5 style="margin-top: 5px"><strong>Charges</strong></H5>
+</div>
+<div class="col-2 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px"><strong>Quantity</strong></H5>
+    </div>
+<div class="col-2 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px"><strong>Weight</strong></H5>
+    </div>
+<div class="col-2 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px"><strong>Rate</strong></H5>
+    </div>
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px"><strong>Total</strong></H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-top: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Return Value</H5>
+</div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-3" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-top: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Asset Data Capture</H5>
+</div>
+<div class="col-2">
+<H5>#</H5>
+    </div>
+<div class="col-2">
+<H5>#</H5>
+    </div>
+<div class="col-2">
+<H5>#</H5>
+    </div>
+<div class="col-3">
+<H5>#</H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-top: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Freight Charge</H5>
+</div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-3" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-top: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Other Fees</H5>
+</div>
+<div class="col-2">
+<H5>#</H5>
+    </div>
+<div class="col-2">
+<H5>#</H5>
+    </div>
+<div class="col-2">
+<H5>#</H5>
+    </div>
+<div class="col-3">
+<H5>#</H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-top: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px"><strong>Total Balance</strong></H5>
+</div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-2" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+<div class="col-3" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+</div>
+  </div>
+</div>
+
+
+
+
+</br></br>
+<center><div class="container border border-secondary" style="background-color: lightgrey">
+<h1>REPORT SUMMARY </h1>
+</div></center>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ITAD ID</th>
+      <th scope="col">Job #</th>
+      <th scope="col">Location</th>
+      <th scope="col">Processing Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Category</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Asset Tag</th>
+      <th scope="col">Serial</th>
+      <th scope="col">Make</th>
+      <th scope="col">Model</th>
+      <th scope="col">Processor</th>
+      <th scope="col">Memory</th>
+      <th scope="col">HD</th>
+      <th scope="col">HD Quantity</th>
+      <th scope="col">HD Status</th>
+      <th scope="col">Test Status</th>
+      <th scope="col">Return Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">#</th>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+    </tr>
+
+  </tbody>
+</table>
+{% endblock %}

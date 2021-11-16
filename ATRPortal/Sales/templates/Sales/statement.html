@@ -1,0 +1,167 @@
+{% extends 'Sales/base.html' %}
+
+
+{% block content %}
+<div class="card border-dark mb-3">
+  <div class="card-body mb-2">
+<center><div class="container border border-secondary" style="background-color: lightgrey">
+<h1>MY STATEMENT</h1>
+</div></center>
+</br>
+<form class="row g-3">
+  <div class="col-md-3">
+    <label class="col-sm-3 col-form-label">Company</label>
+    <input type="text" class="form-control" id="Company" placeholder="">
+  </div>
+  <div class="col-md-3">
+    <label class="col-sm-3 col-form-label">Location  </label>
+      <input type="select" class="form-control" id="Location">
+  </div>
+  <div class="col-md-3">
+    <label class="col-sm-3 col-form-label">Start Date</label>
+    <input type="date" class="form-control" id="Start_Date" placeholder="">
+  </div>
+  <div class="col-3">
+    <label class="col-sm-3 col-form-label">End Date</label>
+    <input type="date" class="form-control" id="End Date" placeholder="">
+  </div>
+  <div class="d-grid gap-2 col-2 mx-auto">
+    <button type="submit" class="btn  btn-outline-primary">Submit</button>
+  </div>
+</form>
+  </div>
+</div>
+
+<div class="card border-dark mb-3">
+  <div class="card-body mb-2">
+<center><div class="container border border-secondary" style="background-color: lightgrey">
+<h1>CLIENT PROFILE</h1>
+</div></center>
+</br>
+<div class="row g-3 " style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Company Name:</H5>
+</div>
+    <div class="col-3" style="background-color: #F0F0F5">
+<H5><strong>#</strong></H5>
+    </div>
+      <div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Total Reused Weight:</H5>
+    </div>
+  <div class="col-3" style="background-color: #F0F0F5">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Locations:</H5>
+    </div>
+        <div class="col-3">
+<H5><strong>#</strong></H5>
+    </div>
+  <div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Total Recycled Weight:</H5>
+    </div>
+  <div class="col-3">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Job Numbers:</H5>
+    </div>
+    <div class="col-3" style="background-color: #F0F0F5">
+<H5><strong>#</strong></H5>
+    </div>
+  <div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Total Weight:</H5>
+    </div>
+  <div class="col-3" style="background-color: #F0F0F5">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Total Reused Quantity:</H5>
+    </div>
+    <div class="col-3">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Total Recycled Quantity:</H5>
+    </div>
+    <div class="col-3" style="background-color: #F0F0F5">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Total Quantity:</H5>
+    </div>
+    <div class="col-2">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+<div class="row g-3">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Net Quantity:</H5>
+    </div>
+    <div class="col-3" style="background-color: #F0F0F5">
+<H5><strong>#</strong></H5>
+    </div>
+</div>
+  </div>
+</div>
+
+
+</br></br>
+
+
+<center><div class="container border border-secondary" style="background-color: lightgrey">
+    <h1>FINANCIAL SUMMARY</h1>
+</div></center>
+</br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Receiving Date</th>
+      <th scope="col">Location</th>
+      <th scope="col">Job #</th>
+      <th scope="col">Total Recovery</th>
+      <th scope="col">Freight</th>
+      <th scope="col">HD Quantity</th>
+      <th scope="col">HD Sanitization</th>
+      <th scope="col">Asset Quantity</th>
+      <th scope="col">Asset Cost</th>
+      <th scope="col">eWaste Quantity</th>
+      <th scope="col">eWaste Fee</th>
+      <th scope="col">Other Fees</th>
+      <th scope="col">Total Cost</th>
+      <th scope="col">Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">#</th>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+      <td>#</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+{% endblock %}

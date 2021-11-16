@@ -1,0 +1,87 @@
+{% extends 'Sales/base.html' %}
+{% load static%}
+
+{% block content %}
+<div class="card border-dark mb-4" style="width: 1000px" xmlns="http://www.w3.org/1999/html">
+  <div class="card-body mb-4">
+<center><div class="container border border-secondary" style="background-color: lightgrey; width: 965px">
+<h1>My Profile</h1>
+</div></center>
+</br>
+<center><img src="{% static 'images/defaultpic.png' %}" class="img-thumbnail" alt="..."></br>
+<div>
+    </br>
+<button type="button" class="btn btn-outline-primary">Upload Photo</button>
+</div></center>
+</br>
+      <div style="padding-left: 250px">
+<center><div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">First Name:</H5>
+</div>
+    <div class="col-5" style="background-color: #F0F0F5">
+<H5>Bob</H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+ <div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Last Name:</H5>
+    </div>
+        <div class="col-5">
+<H5>#</H5>
+        </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Company:</H5>
+    </div>
+    <div class="col-5" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Position:</H5>
+    </div>
+    <div class="col-5">
+<H5>#</H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Email:</H5>
+    </div>
+    <div class="col-5" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Phone Number:</H5>
+    </div>
+    <div class="col-5">
+<H5>#</H5>
+    </div>
+</div>
+<div class="row g-3" style="padding-bottom: 3px">
+<div class="col-3 border border-secondary" style="background-color: lightgrey">
+<H5 style="margin-top: 5px">Credentials:</H5>
+    </div>
+    <div class="col-5" style="background-color: #F0F0F5">
+<H5>#</H5>
+    </div>
+</div></center>
+      </div>
+      </br>
+          <center><div class="row g-3">
+<div class="col-12">
+    <button class="btn btn-outline-primary" type="submit">Update Info</button>
+</div>
+              </div></center>
+
+</div>
+  </div>
+
+
+
+{% endblock %}

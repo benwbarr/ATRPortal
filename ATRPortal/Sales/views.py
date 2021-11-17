@@ -7,6 +7,7 @@ import csv
 import io
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
+from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 
 
@@ -102,26 +103,28 @@ def venue_pdf(request):
 
 
     for venue in venues:
-        lines.append(venue.jobnumber)
-        lines.append(venue.company)
+        lines.append("")
+        lines.append("")
+        lines.append(f'Job Number: {venue.jobnumber}')
+        lines.append(f'Company: {venue.company}')
         refnumber_string = str(venue.refnumber)
-        lines.append(refnumber_string)
+        lines.append(f'Reference Number: {refnumber_string}')
         rdate_string = str(venue.rdate)
         lines.append(rdate_string)
         lines.append(venue.location)
 
-
+    image = "Sales/static/images/small.jpg"
+    c.drawImage(image, 10, 10, width=80, height=80)
 
     for line in lines:
         textob.textLine(line)
-        print(lines)
     c.drawText(textob)
     c.showPage()
     c.save()
     buf.seek(0)
 
     return FileResponse(buf, as_attachment=True, filename='venue.pdf')
-    print(lines)
+
 
 @csrf_protect
 def login(request):
